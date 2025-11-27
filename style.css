@@ -1,0 +1,303 @@
+/* GENERAL THEME */
+body {
+    margin: 0;
+    font-family: "Press Start 2P", sans-serif;
+    background: linear-gradient(#ffb6d9, #ff8fc7);
+    text-align: center;
+    color: #fff0f7;
+    overflow-x: hidden;
+    padding-bottom: 120px;
+}
+
+/* =======================
+      LOCK SCREEN
+======================= */
+.lock-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(#ffb8e6, #ff8ccf);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lock-box {
+    background: rgba(255,255,255,0.2);
+    padding: 30px 25px;
+    border: 4px solid #ff4fae;
+    border-radius: 20px;
+    text-align: center;
+    width: 85%;
+    max-width: 350px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px #ff3fa7;
+}
+
+.lock-title {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 0 6px #ff3fa7;
+}
+
+.lock-text {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.name-input {
+    width: 90%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid #ff4fae;
+    outline: none;
+    background: #ffe0f3;
+}
+
+.unlock-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 15px;
+    background: #ff4fae;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff8ed6;
+}
+
+.error-msg {
+    margin-top: 12px;
+    font-size: 14px;
+    height: 20px;
+    color: #ff0066;
+}
+
+.site-content {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+/* =======================
+      FLOATING HEARTS
+======================= */
+.pixel-heart {
+    position: fixed;
+    width: 14px;
+    height: 14px;
+    background: #ff4fae;
+    clip-path: polygon(
+        50% 0%, 61% 8%, 70% 20%, 75% 30%, 
+        80% 40%, 50% 80%, 20% 40%, 25% 30%, 
+        30% 20%, 39% 8%
+    );
+    opacity: 0.8;
+    filter: drop-shadow(0 0 6px #ff7cc7);
+    animation: fall linear infinite;
+    z-index: 2;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) translateX(0); }
+    100% { transform: translateY(120vh) translateX(30px); opacity: 0; }
+}
+
+/* =======================
+        PAGE TITLE
+======================= */
+.game-title {
+    margin-top: 40px;
+    font-size: 28px;
+    color: white;
+    text-shadow: 0 0 8px #ff2b9e, 0 0 14px #ff5ebc;
+}
+
+/* =======================
+        GRID LAYOUT
+======================= */
+.grid-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "box1 box2"
+        "box3 box3";
+}
+
+.box {
+    background: rgba(255,255,255,0.15);
+    border: 4px solid #ff5bb2;
+    border-radius: 18px;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 18px #ff69c7;
+}
+
+.box1 { grid-area: box1; }
+.box2 { grid-area: box2; }
+.box3 { grid-area: box3; }
+
+.box-title {
+    font-size: 20px;
+    text-shadow: 0 0 6px #ff3fa7;
+}
+
+.box-text {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =======================
+         GALLERY
+======================= */
+.gallery {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #ff4fae;
+    box-shadow: 0 0 10px #ff78d4;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* =======================
+     SECRET BUTTON
+======================= */
+.secret-btn {
+    margin-top: 40px;
+    font-size: 16px;
+    background: #ff7ac4;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff4fae;
+    border: 3px solid #ff4fae;
+    transition: 0.3s;
+}
+
+.secret-btn:hover {
+    transform: scale(1.05);
+}
+
+/* =======================
+       GIFT POPUP
+======================= */
+.gift-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gift-box img {
+    width: 150px;
+    transition: 0.4s ease;
+    filter: drop-shadow(0 0 12px #ff8ed6);
+    cursor: pointer;
+}
+
+.secret-message {
+    display: none;
+    width: 80%;
+    max-width: 340px;
+    background: #ffb6e6;
+    border: 4px solid #ff4fae;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 0 20px #ff69c7;
+    margin-top: 25px;
+}
+
+.close-secret {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff4fae;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* =======================
+       MODAL ZOOM
+======================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 80px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 70%;
+    max-width: 650px;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+}
+
+/* =======================
+     MOBILE FIXES
+======================= */
+@media (max-width: 700px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "box1"
+            "box2"
+            "box3";
+    }
+
+    .box {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .gallery img {
+        width: 140px;
+        height: 180px;
+    }
+}

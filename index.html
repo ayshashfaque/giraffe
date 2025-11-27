@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday, Player Two 💗🎮</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 🌸 LOCK SCREEN -->
+<div id="lockScreen" class="lock-screen">
+    <div class="lock-box">
+        <h2 class="lock-title">💗 Access For Player Two Only 💗</h2>
+        <p class="lock-text">Enter your name to continue:</p>
+
+        <input type="text" id="nameInput" class="name-input" placeholder="Type your name...">
+
+        <button class="unlock-btn" onclick="unlockSite()">UNLOCK</button>
+
+        <p id="errorMsg" class="error-msg"></p>
+    </div>
+</div>
+
+<!-- 🌸 EVERYTHING ELSE IS HIDDEN UNTIL UNLOCKED -->
+<div id="siteContent" class="site-content">
+
+<!-- floating pixel hearts -->
+<div id="heart-container"></div>
+
+<h1 class="game-title">💕 Happy Birthday, Player Two 🎮</h1>
+
+<div class="grid-container">
+
+    <!-- BOX 1 -->
+    <div class="box box1">
+        <h2 class="box-title">Happy Birthday Love 💗</h2>
+        <p class="box-text">
+            To my favourite person in the whole universe…  
+            You make every level of my life brighter.  
+            You are my comfort character, my power-up,  
+            and my forever player two. 💕  
+        </p>
+    </div>
+
+    <!-- BOX 2 -->
+    <div class="box box2">
+        <h2 class="box-title">Things I Love About You 💞</h2>
+        <p class="box-text">
+            ❤️ Your laugh is my favourite soundtrack  
+            ❤️ You make boring levels fun  
+            ❤️ Your hugs feel like winning a boss fight  
+            ❤️ You care in the sweetest ways  
+            ❤️ You’re my safest place  
+        </p>
+    </div>
+
+    <!-- BOX 3 - GALLERY -->
+    <div class="box box3">
+        <h2 class="box-title">Our Gallery 📸</h2>
+
+        <div class="gallery">
+            <img src="img/pic1.jpg">
+            <img src="img/cuties.jpg">
+            <img src="img/pic4.jpg">
+            <img src="img/pic5.jpg">
+        </div>
+    </div>
+</div>
+
+<!-- SECRET MESSAGE BUTTON -->
+<div class="secret-btn" onclick="showGiftBox()">
+    💗 Tap to read a secret message 💗
+</div>
+
+<!-- GIFT BOX POPUP -->
+<div id="giftOverlay" class="gift-overlay">
+    <div class="gift-box" onclick="openGiftBox()">
+        <img src="img/kawaii.png" id="giftImg">
+    </div>
+
+    <div id="secretMessage" class="secret-message">
+        <h2>💌 A Secret For You 💌</h2>
+        <p>
+            You are the sweetest part of my life,  
+            the person who feels like home,  
+            the one I want to adventure with forever.  
+            I’m so lucky you exist 💗  
+        </p>
+        <button class="close-secret" onclick="closeGiftBox()">Close ✨</button>
+    </div>
+</div>
+
+<!-- MODAL for image zoom -->
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script src="script.js"></script>
+</div> <!-- END SITE CONTENT -->
+
+</body>
+</html>
